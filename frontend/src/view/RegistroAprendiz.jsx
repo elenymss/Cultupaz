@@ -22,16 +22,16 @@ function RegistroUser() {
   const [fecha, setFecha] = useState("");
   const [tipo, setTipo] = useState("");
   const [numDocumento, setNumDocumento] = useState("");
-  const [foto, setImagen] = useState(null);
+  // const [foto, setImagen] = useState(null);
   const [usuario, setUsuario] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirPassword, setConfirPassword] = useState("");
  
 
-  const handleImageChange = (ev) => {
-    setImagen(ev.target.files[0]);
-  };
+  // const handleImageChange = (ev) => {
+  //   setImagen(ev.target.files[0]);
+  // };
   const resgistrarAprendiz = async () => {
     if (
       nombres === "" ||
@@ -63,7 +63,7 @@ function RegistroUser() {
           formData.append("fechaNacimiento", fecha);
           formData.append("tipoDocumento", tipo);
           formData.append("numeroDocumento", numDocumento);
-          formData.append("foto", foto);
+          // formData.append("foto", foto);
           formData.append("usuario", usuario);
           formData.append("correo", email);
           formData.append("passw", password);

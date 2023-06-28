@@ -87,7 +87,7 @@ function GaleriaAprendiz() {
 
       <section className="container">
         <div className="mt-3">
-          <div className="row">
+          <div className="row artesanias">
             {artesanias.map((artesania, index) => {
               return (
                 <div
@@ -106,7 +106,7 @@ function GaleriaAprendiz() {
                       </h5>
                       <p className="card-text">{artesania.descripcion}</p>
                     </div>
-                    <div className="d-flex justify-content-center p-4">
+                    <div className="d-flex justify-content-center ">
                       <button
                         type="button"
                         className="btn btn-eliminar m-1 p-2"
@@ -133,8 +133,8 @@ function GaleriaAprendiz() {
       </section>
 
       <Modal show={modalAbierto} onHide={cerrarModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Actualizar Artesanía</Modal.Title>
+        <Modal.Header className="bg-nav text-light" closeButton>
+          <Modal.Title className="text-light">Actualizar Artesanía</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {artesaniaEditando && (
