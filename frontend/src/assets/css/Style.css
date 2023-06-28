@@ -375,7 +375,18 @@ section {
     position: relative;
     
   }
-  
+  .section-title span {
+    position: absolute;
+    top: 30px;
+    color: #eef0f2;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 52px;
+    text-transform: uppercase;
+    line-height: 0;
+  }
   .section-title h2{
     text-decoration: none;
     font-size: 32px;

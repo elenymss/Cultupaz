@@ -7,7 +7,7 @@ function CompFooter(){
         <div className="container-fluid bg-footer ">
             <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5  p-5">
                 <div className="col mb-3 pt-5 d-flex justify-content-center">
-                    <img src={Logo} className="bi me-2  ms-2 mt-3" width="120" height="70"/>
+                <img src={Logo} width={90} height={70} alt="logo" />
                 </div>
 
                 <div className="col mb-3">

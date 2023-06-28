@@ -245,7 +245,7 @@ function RegistroUser() {
                         onChange={(ev) => setNumDocumento(ev.target.value)}
                       />
                     </div>
-                    <div className="col-sm-4 mb-3">
+                    {/* <div className="col-sm-4 mb-3">
                       <label className="form-label link" for="">
                         Foto
                       </label>
@@ -255,7 +255,7 @@ function RegistroUser() {
                        accept="image/jpeg, image/png"
                        onChange={handleImageChange}
                       />
-                    </div>
+                    </div> */}
                     <div className="col-sm-4 mb-3">
                       <label className="form-label link" for="">
                         Nombre de usuario

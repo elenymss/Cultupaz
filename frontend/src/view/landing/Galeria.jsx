@@ -29,17 +29,22 @@ function Galeria() {
     <div className="container mt-5 py-5">
       
       <section className="container ">
-        <div className="mt-3">
-         <div class="row ">
+       
+        <div className="section-title">
+               <span>Galeria</span> 
+              <h2>Galeria de artesanias</h2>
+             
+            </div>
+         <div class="row artesanias">
           {artesanias.map((artesania, index) => {
             const usuario = artesania.usuario;
             return (
-              <div className="col-xl-4 d-flex align-items-stretch eventoone" key={index}>
+              <div className="col-xl-4 align-items-stretch eventoone justify-content-center" key={index}>
                 <div className="card">
                 
                   <img
                     src={artesania.img_uno}
-                    className="w-100 shadow-1-strong rounded img-tam "
+                    className="w-100 shadow-1-strong rounded img-tam"
                     alt="Artesanía"
                   />
                   <div className="card-body">
@@ -59,7 +64,7 @@ function Galeria() {
           })}
         </div>
 
-        </div>
+        
       </section>
 
     </div>
