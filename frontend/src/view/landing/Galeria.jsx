@@ -39,8 +39,8 @@ function Galeria() {
           {artesanias.map((artesania, index) => {
             const usuario = artesania.usuario;
             return (
-              <div className="col-xl-4 align-items-stretch eventoone justify-content-center" key={index}>
-                <div className="card">
+              <div className="col-xl-4 d-flex align-items-stretch eventoone justify-content-center" key={index}>
+                <div className="card ">
                 
                   <img
                     src={artesania.img_uno}
@@ -48,8 +48,8 @@ function Galeria() {
                     alt="Artesanía"
                   />
                   <div className="card-body">
-                    <h5 className="card-title text-center">{artesania.titulo}</h5>
-                    <p className="card-text">{artesania.descripcion}</p>
+                    <h5 className="card-title text-center fw-semibold">{artesania.titulo}</h5>
+                    <p className="card-text text-center">{artesania.descripcion}</p>
                   </div>
                   <div className="card-body d-flex justify-content-between ">
                     <p className="list-group-item"><b>Hecha por: </b><br/> {usuario.nombre}</p>

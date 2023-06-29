@@ -91,7 +91,7 @@ function GaleriaAprendiz() {
             {artesanias.map((artesania, index) => {
               return (
                 <div
-                  className="col-lg-4 align-items-stretch eventoone"
+                  className="col-lg-4 d-flex align-items-stretch eventoone"
                   key={index}
                 >
                   <div className="card">
@@ -101,10 +101,10 @@ function GaleriaAprendiz() {
                       alt="Artesanía"
                     />
                     <div className="card-body">
-                      <h5 className="card-title text-center">
+                      <h5 className="card-title text-center fw-semibold">
                         {artesania.titulo}
                       </h5>
-                      <p className="card-text">{artesania.descripcion}</p>
+                      <p className="card-text text-center">{artesania.descripcion}</p>
                     </div>
                     <div className="d-flex justify-content-center ">
                       <button

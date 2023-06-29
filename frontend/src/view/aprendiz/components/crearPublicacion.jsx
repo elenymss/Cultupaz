@@ -61,7 +61,7 @@ function CrearPublicacion() {
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
         >
-          Crea una nueva publicación
+         <i class="bi bi-box-arrow-up p-3"></i>
         </Button>
       </div>
 

@@ -126,9 +126,10 @@ function AprendizPerfil() {
                     key={usuarios.idUsuario}
                   >
                     <img
-                      src={Perfil}
+                      src={usuarios.foto}
                       alt="Profile"
-                      className="rounded-circle"
+                      className="rounded-circle" 
+                      style={{ width: "100px", height: "100px" }}
                     />
                     <h2>{usuarios.nombres}</h2>
                     <h3>Aprendiz</h3>

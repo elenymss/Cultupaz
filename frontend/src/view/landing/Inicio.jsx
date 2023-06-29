@@ -234,7 +234,7 @@ const Inicio = () => {
                       aria-controls="pills-home"
                       aria-selected="true"
                     >
-                      Comunicación
+                      Promoción de la cultura
                     </button>
                   </li>
                   <li className="nav-item" role="presentation">
@@ -248,7 +248,7 @@ const Inicio = () => {
                       aria-controls="pills-profile"
                       aria-selected="false"
                     >
-                      Creatividad
+                      Fomento de paz y resolucion de conflictos
                     </button>
                   </li>
                   <li className="nav-item" role="presentation">
@@ -262,7 +262,7 @@ const Inicio = () => {
                       aria-controls="pills-contact"
                       aria-selected="false"
                     >
-                      Identidad
+                      Inclusión y equidad
                     </button>
                   </li>
                 </ul>
@@ -385,7 +385,7 @@ const Inicio = () => {
                   {artesaniasAleatorias.map((artesania, index) => {
                       const usuario = artesania.usuario;
                       return (
-                        <div className="col-xl-4 align-items-stretch eventoone justify-content-center" key={index}>
+                        <div className="col-xl-4 d-flex align-items-stretch eventoone justify-content-center" key={index}>
                           <div className="card ">
                             <img
                               src={artesania.img_uno}
@@ -393,8 +393,8 @@ const Inicio = () => {
                               alt="Artesanía"
                             />
                             <div className="card-body">
-                              <h5 className="card-title text-center">{artesania.titulo}</h5>
-                              <p className="card-text">{artesania.descripcion}</p>
+                              <h5 className="card-title text-center fw-semibold">{artesania.titulo}</h5>
+                              <p className="card-text text-center ">{artesania.descripcion}</p>
                             </div>
                             <div className="card-body d-flex justify-content-between ">
                               <p className="list-group-item"><b>Hecha por: </b><br/> {usuario.nombre}</p>

@@ -147,28 +147,26 @@ function MuroAprendiz() {
                   <div className="row">
                   <section id="events" className="events">
                     <div className="container" data-aos="fade-up">
-                        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 p-2">
-                        {verMuro
-                            .sort((a, b) => new Date(b.fecha_creacion) - new Date(a.fecha_creacion))
-                            .map((Muro, idMuro) => (
-                            <div className="col-lg-4" key={idMuro}>
-                                <div className="card p-1" >
-                                <div className="card-body">
+                    <div className="row  p-2">
+                      {verMuro
+                        .sort((a, b) => new Date(b.fecha_creacion) - new Date(a.fecha_creacion))
+                        .map((Muro, idMuro) => (
+                          <div className="col-lg-4 col-md-6 col-12 mb-4" key={idMuro}>
+                            <div className="card">
+                              <div className="card-body">
                                 <div className="d-flex justify-content-between">
-                                <h5 className="card-title">{Muro.titulo}</h5>
-                                
+                                  <h5 className="card-title">{Muro.titulo}</h5>
                                 </div>
-                                
-                                
                                 <p className="card-text">{Muro.descripcion}</p>
-                                <h6 className="card-subtitle mb-2 text-muted text-sice ">
-                                    {formatFechaCreacion(Muro.fecha_creacion, fechaActual)}
+                                <h6 className="card-subtitle mb-2 text-muted text-sice">
+                                  {formatFechaCreacion(Muro.fecha_creacion, fechaActual)}
                                 </h6>
-                                </div>
+                              </div>
                             </div>
-                            </div>
-                            ))}
-                        </div>
+                          </div>
+                        ))}
+                    </div>
+
                     </div>
                     </section>
                   

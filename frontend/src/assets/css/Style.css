@@ -437,17 +437,18 @@ section {
     width: 90%;
   }
   .nav-pills .nav-link{
-    color: #042061 !important;
+    color: #ffff !important;
+    background: #19a580;
   }
   .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    background-color: #02133b !important;
+    background-color: #0f4877 !important;
     color: white !important;
   }
   .nav-pills .nav-link.active:hover  {
     box-shadow: rgba(41, 41, 190, 0.25) 0px 13px 27px -5px, rgba(20, 93, 183, 0.3) 0px 8px 16px -8px;
   }
   .nav-pills .nav-link:hover  {
-   background-color: #f0f1f2;
+   background-color: #8bafd3;
    box-shadow: rgba(41, 41, 190, 0.25) 0px 13px 27px -5px, rgba(20, 93, 183, 0.3) 0px 8px 16px -8px;
   }
   .nav-pills .nav-item{
