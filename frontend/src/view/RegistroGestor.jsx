@@ -26,9 +26,9 @@ function RegistroGestor() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirPassword, setConfirPassword] = useState("");
-  const handleImageChange = (ev) => {
-    setImagen(ev.target.files[0]);
-  };
+  // const handleImageChange = (ev) => {
+  //   setImagen(ev.target.files[0]);
+  // };
 
   const resgistrarGestor = async () => {
     if (
@@ -66,30 +66,18 @@ function RegistroGestor() {
           formData.append("confirPassw", confirPassword);
           formData.append("idTipo", 2);
           formData.append("estadoUsuario", 0);
-          const loanding = Swal.fire({
-            title: "Su resgitro esta en proceso",
-            text: "Por favor espera un momento...",
-            allowOutsideClick: false,
-            showConfirmButton: false,
-            didOpen: () => {
-              Swal.showLoading();
-            },
-          });
+          // const loanding = Swal.fire({
+          //   title: "Su resgitro esta en proceso",
+          //   text: "Por favor espera un momento...",
+          //   allowOutsideClick: false,
+          //   showConfirmButton: false,
+          //   didOpen: () => {
+          //     Swal.showLoading();
+          //   },
+          // });
 
         var resul = await axios.post("http://localhost:7000/registroUsuarios", formData 
-          // nombres: nombres,
-          // apellidos: apellidos,
-          // telefono: telefono,
-          // genero: genero,
-          // fechaNacimiento: fecha,
-          // tipoDocumento: tipo,
-          // numeroDocumento: numDocumento,
-          // usuario: usuario,
-          // correo: email,
-          // passw: password,
-          // confirPassw: confirPassword,
-          // idTipo: 2,
-          // estadoUsuario: 0,
+         
         );
 
         if (resul.status === 200) {

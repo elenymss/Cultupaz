@@ -633,6 +633,12 @@
   border-radius: 5px;
   
  }
+ .usuarioInac .card-bg{
+  background: #0bb68b;
+  color: #fff;
+  border-radius: 5px;
+  
+ }
  .sug .card{
   border: 1px solid #1ea583 !important;
   

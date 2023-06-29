@@ -63,43 +63,16 @@ function RegistroUser() {
           formData.append("fechaNacimiento", fecha);
           formData.append("tipoDocumento", tipo);
           formData.append("numeroDocumento", numDocumento);
-          // formData.append("foto", foto);
           formData.append("usuario", usuario);
           formData.append("correo", email);
           formData.append("passw", password);
           formData.append("confirPassw", confirPassword);
           formData.append("idTipo", 1);
           formData.append("estadoUsuario", 1);
-          const loanding = Swal.fire({
-            title: "Su resgitro esta en proceso",
-            text: "Por favor espera un momento...",
-            allowOutsideClick: false,
-            showConfirmButton: false,
-            didOpen: () => {
-              Swal.showLoading();
-            },
-          });
 
           var resul = await axios.post(
             "http://localhost:7000/registroUsuarios", formData
-            // {
-            //   nombres: nombres,
-            //   apellidos: apellidos,
-            //   telefono: telefono,
-            //   ficha: ficha,
-            //   genero: genero,
-            //   fechaNacimiento: fecha,
-            //   tipoDocumento: tipo,
-            //   numeroDocumento: numDocumento,
-            //   usuario: usuario,
-            //   correo: email,
-            //   passw: password,
-            //   confirPassw: confirPassword,
-            //   idTipo: 1,
-            //   estadoUsuario: 1,
-            // }
           );
-          loanding.close();
           if (resul.status === 200) {
             Swal.fire({
               icon: "success",

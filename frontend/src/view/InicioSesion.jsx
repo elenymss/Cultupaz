@@ -10,6 +10,7 @@ function InicioSesion() {
 
   const [correo, setCorreo] = useState("");
   const [passw, setPassw] = useState("");
+  const [mostrarPassw, setMostrarPassw] = useState(false);
 
   const iniciarSesion = async () => {
     try {
@@ -30,16 +31,16 @@ function InicioSesion() {
           localStorage.setItem("nameUsuario", resul.data.nameUsuario);
           console.log(resul.data);
 
-          localStorage.setItem("logueado",true)
+          localStorage.setItem("logueado", true);
           if (resul.data.rol === 1) {
             navigate("/aprendiz");
-            localStorage.setItem("usuario","aprendiz")
+            localStorage.setItem("usuario", "aprendiz");
           } else if (resul.data.rol === 2) {
             navigate("/gestor");
-            localStorage.setItem("usuario","gestor")
+            localStorage.setItem("usuario", "gestor");
           } else if (resul.data.rol === 3) {
             navigate("/admin");
-            localStorage.setItem("usuario","admin")
+            localStorage.setItem("usuario", "admin");
           }
         });
       }
@@ -55,22 +56,22 @@ function InicioSesion() {
 
   return (
     <div>
-      <img src={fondo} className="fondo " alt="fondo"></img>
-      <div className="container ">
+      <img src={fondo} className="fondo" alt="fondo"></img>
+      <div className="container">
         <div className="row d-flex align-items-center justify-content-center">
           <div className="col-md-7 col-lg-5 col-xl-4 p-cont bg-cont py-3 border-5-secondary rounded-2">
             <img
               src={Logo}
-              className=" d-flex w-25 h-25 text-center justify-content-center align-items-center m-auto"
+              className="d-flex w-25 h-25 text-center justify-content-center align-items-center m-auto"
               alt="logo"
             ></img>
             <form className="p-5">
               <h2 className="text-center bg-text fw-bold text-light mt-0">
                 Inicia Sesión
               </h2>
-              <div className="form-outline mb-4 ">
-                <label className="form-label link text-light" for="correo">
-                  Correo electroníco
+              <div className="form-outline mb-4">
+                <label className="form-label link text-light" htmlFor="correo">
+                  Correo electrónico
                 </label>
                 <input
                   className="form-control form-control-lg"
@@ -80,30 +81,38 @@ function InicioSesion() {
               </div>
 
               <div className="form-outline mb-4">
-                <label className="form-label link text-light" for="passw">
+                <label className="form-label link text-light" htmlFor="passw">
                   Contraseña
                 </label>
-                <input
-                  type="password"
-                  className="form-control form-control-lg"
-                  value={passw}
-                  onChange={(ev) => setPassw(ev.target.value)}
-                />
+                <div className="input-group">
+                  <input
+                    type={mostrarPassw ? "text" : "password"}
+                    className="form-control form-control-lg"
+                    value={passw}
+                    onChange={(ev) => setPassw(ev.target.value)}
+                  />
+                  <button
+                    type="button"
+                    className="btn text-light border border-secondary"
+                    onClick={() => setMostrarPassw(!mostrarPassw)}
+                  >
+
+                    {mostrarPassw ? <i class="bi bi-eye-slash"></i> :<i class="bi bi-eye"></i>} 
+                  </button>
+                </div>
               </div>
+
               <div className="d-flex justify-content-center mt-3 text-light">
                 <button
                   type="button"
                   onClick={iniciarSesion}
-                  className=" btn-login p-1 w-100 h-50 fw-bold"
+                  className="btn-login p-1 w-100 h-50 fw-bold"
                 >
                   Iniciar sesión
                 </button>
               </div>
-              <div className="d-flex justify-content-center mt-3">
-                <Link to="/" className="link text-light">
-                  Volver al menú principal{" "}
-                </Link>
-              </div>
+
+             
             </form>
           </div>
         </div>
