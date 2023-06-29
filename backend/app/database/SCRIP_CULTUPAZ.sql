@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `db_cultupaz`.`usuarios` (
   `correo` VARCHAR(50) UNIQUE NOT NULL,
   `passw` VARCHAR(200) NOT NULL,
   `estadoUsuario` BOOLEAN NOT NULL DEFAULT TRUE,
+  `habilitado_usuario` BOOLEAN NOT NULL DEFAULT TRUE,
   `idTipo` INT NOT NULL,
   PRIMARY KEY (`idUsuario`),
     FOREIGN KEY (`idTipo`)

@@ -48,8 +48,6 @@ export const nuevaSolicitud = async (req, res) => {
 
 
 
-//sugerencias
-
 //registro sugerencias
 export const registroSugerencia = async (req, res) => {
 

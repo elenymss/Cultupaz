@@ -22,11 +22,9 @@ export const resgitroUsuarios = async (req, res) => {
 
   let urlImage;
   if (req.files.foto) {
-      const resul = await cloudinary.uploader.upload(
-        req.files.foto[0].path
-      );
-      urlImage = resul.secure_url;
-  } 
+    const resul = await cloudinary.uploader.upload(req.files.foto[0].path);
+    urlImage = resul.secure_url;
+  }
 
   //validacion contraseña
   if (passw.length < 6) {
@@ -62,14 +60,15 @@ export const resgitroUsuarios = async (req, res) => {
   // Verificar si el correo ya está registrado
   const correoExists = await valCorreoExists(correo);
   if (correoExists) {
-    return res.status(400).json("Existe una cuenta registrada con esta dirección de correo");
+    return res
+      .status(400)
+      .json("Existe una cuenta registrada con esta dirección de correo");
   }
   // Validación del correo electrónico
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(correo)) {
     return res.status(400).json("Debe ingresar una dirección de correo valida");
   }
-  
 
   const passHas = await bcryptjs.hash(passw, 10);
 
@@ -83,7 +82,7 @@ export const resgitroUsuarios = async (req, res) => {
       fechaNacimiento: fechaNacimiento,
       tipoDocumento: tipoDocumento,
       numeroDocumento: numeroDocumento,
-      foto:urlImage,
+      foto: urlImage,
       usuario: usuario,
       correo: correo,
       passw: passHas,
@@ -189,6 +188,12 @@ export const loginUsuarios = async (req, res) => {
         return res.status(400).json("Contraseña incorrecta");
       }
 
+      if (resul[0].habilitado_usuario == 0) {
+        return res
+          .status(400)
+          .json("Estas Inhabilitado no puedes ingresar por el momento");
+      }
+
       if (resul[0].idTipo == 1) {
         res.json({
           rol: 1,
@@ -201,8 +206,11 @@ export const loginUsuarios = async (req, res) => {
         if (resul[0].estadoUsuario == 0) {
           return res
             .status(400)
-            .json("Tu solicitud esta en proceso de aprobación para poder iniciar sesión");
+            .json(
+              "Tu solicitud esta en proceso de aprobación para poder iniciar sesión"
+            );
         }
+
         res.json({
           rol: 2,
           idUsuario: resul[0].idUsuario,
@@ -222,4 +230,3 @@ export const loginUsuarios = async (req, res) => {
     }
   });
 };
-
